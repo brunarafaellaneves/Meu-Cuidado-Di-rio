@@ -1,4 +1,4 @@
-<?php include("log_verification.php");?>
+<?php include 'session/log_verification.php'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -33,24 +33,41 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <form id="contactForm" method="POST" action="bd/conexao_login.php" name="sentMessage" novalidate="novalidate">
+                        <?php if ($_SESSION["erro"] == 'true'): ?>
+                        <br><p style="color:red"> Login ou senha incorretos. Por favor, tente novamente ou se cadastre.</p>
+                        <?php endif; $_SESSION["erro"] = 'false'; ?>
+                        
+                        <?php if ($_SESSION["cadastro"] == 'true'): ?>
+                        <br><p style="color:darkgreen"> Cadastro concluído com sucesso! Realize o LOGIN com os dados cadastrados abaixo.</p>
+                        <?php endif; $_SESSION["cadastro"] = 'false';?>
+                        
+                        <?php if ($_SESSION["delete_user"] == 'true'): ?>
+                        <br><p style="color:red"> Conta excluída com sucesso. Já estamos com saudades!</p>
+                        <?php endif; $_SESSION["delete_user"] = 'false';?>
+                        
+                        
+                        
+                        <form method="POST" action="bd/conexao_login.php" novalidate="novalidate">
+                            <br>
                             <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <!--<div class="form-group floating-label-form-group controls mb-0 pb-2">-->
                                     <label>E-mail</label>
-                                    <input class="form-control" id="email" type="email" placeholder="E-mail" required="required" data-validation-required-message="Por favor, digite seu endereço de e-mail." />
+                                    <input class="form-control" name="email" type="email" placeholder="E-mail" required="required" data-validation-required-message="Por favor, digite seu endereço de e-mail." />
                                     <p class="help-block text-danger"></p>
-                                </div>
+                                <!--</div>-->
                             </div>
                             <div class="control-group">
-                                <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <!--<div class="form-group floating-label-form-group controls mb-0 pb-2">-->
                                     <label>Senha</label>
-                                    <input class="form-control" id="senha" type="password" placeholder="Senha" required="required" data-validation-required-message="Por favor, digite sua senha." />
+                                    <input class="form-control" name="senha" type="password" placeholder="Senha" required="required" data-validation-required-message="Por favor, digite sua senha." />
                                     <p class="help-block text-danger"></p>
-                                </div>
+                                <!--</div>-->
                             </div>
                             <br />
                             <div id="success"></div>
-                            <div class="portfolio-item mx-auto"><button class="btn btn-primary btn-xl" type="submit">LOGAR</button></div><br>
+                            <div class="portfolio-item mx-auto">
+                                <button class="btn btn-primary " type="submit">LOGAR</button>
+                                </div><br>
                         </form>
                         <p class="principal">NÃO É CADASTRADO(A)? <a href="register.php">CADASTRE-SE</a></p>
                     </div>

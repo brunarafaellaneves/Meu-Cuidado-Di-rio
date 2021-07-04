@@ -1,4 +1,6 @@
-<?php include 'session/log_verification.php'; ?>
+<?php 
+include 'session/log_verification.php'; 
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

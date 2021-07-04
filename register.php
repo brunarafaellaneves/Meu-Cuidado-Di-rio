@@ -37,21 +37,21 @@
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>E-mail</label>
-                                    <input class="form-control" id="email" type="email" placeholder="E-mail" required="required" data-validation-required-message="Por favor, digite seu endereço de e-mail." />
+                                    <input class="form-control" name="email" type="email" placeholder="E-mail" required="required" data-validation-required-message="Por favor, digite seu endereço de e-mail." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>E-mail</label>
-                                        <input class="form-control" id="nome" type="name" placeholder="Nome" required="required" data-validation-required-message="Por favor, digite seu nome." />
+                                        <input class="form-control" name="nome" type="name" placeholder="Nome" required="required" data-validation-required-message="Por favor, digite seu nome." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>Senha</label>
-                                    <input class="form-control" id="senha" type="password" placeholder="Senha" required="required" data-validation-required-message="Por favor, digite sua senha." />
+                                    <input class="form-control" name="senha" type="password" placeholder="Senha" required="required" data-validation-required-message="Por favor, digite sua senha." />
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>

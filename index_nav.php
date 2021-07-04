@@ -27,7 +27,9 @@
                 
                 <!-- Checando se usuário NÃO está logado -->
                 <?php if($_SESSION["log"]==true): ?>
-                
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="user_data_page.php">MEU PERFIL</a>
+                </li>
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="session/unlog.php">DESLOGAR</a>
                 </li>
